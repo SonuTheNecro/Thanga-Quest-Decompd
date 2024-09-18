@@ -1,0 +1,61 @@
+{
+    "type": "rect",
+    "id": "settingsModalSprite",
+    "parameters": "fillColor:0x000000;fillAlpha:0.5;strokeWidth:0",
+    "animations": [
+        "field:opacity;duration:0.4;keyframes:0=0,100=255"
+    ],
+    "bindings": {
+            "width": "@Graphics.width",
+            "height": "@Graphics.height"
+    },
+    "constants": {
+        "inputTitleText": "Enter your name for network..."
+    },
+    "childrens": [
+        {
+            "type": "rect",
+            "id": "modalBackground",
+            "parameters": "fillColor:0x42073a;fillAlpha:0.6;strokeWidth:1;corners:12",
+            "animations": [
+                "field:opacity;duration:0.15;keyframes:0=0,100=255",
+                "field:y;relative;duration:0.25;keyframes:0=20,100=0"
+            ],
+            "bindings": {
+                "width": "80%",
+                "height": "36%",
+                "position": { "x": "center", "y": "20%" }
+            },
+            "childrens": [
+                {
+                    "type": "group",
+                    "id": "settingsModalButtons",
+                    "bindings": {
+                        "position": { "x": "center", "y": "bottom - 20" }
+                    },
+                    "childrens": [
+                        {
+                            "id": "savePlayerNameButton",
+                            "type": "button",
+                            "parameters": "width:160;height:52;imageName:networkSceneButton;folderName:Alpha;tint:#210c1e;overTint:#42073a;activeTint:#2e102a;keyboardKey:ok",
+                            "bindings": {
+                                "position": { "x": "0", "y": "0" }
+                            },
+                            "childrens": [
+                                {
+                                    "type": "text",
+                                    "parameters": "outline:width=4,color=#4040db;",
+                                    "bindings": {
+                                        "size": { "width": "100%", "height": "100%" },
+                                        "fontSize": "40%",
+                                        "text": ["%1", "OK"]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

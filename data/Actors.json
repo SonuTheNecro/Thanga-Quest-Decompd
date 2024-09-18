@@ -1,0 +1,9 @@
+[
+null,
+{"id":1,"battlerName":"Actor1_2","characterIndex":0,"characterName":"People1","classId":2,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"People1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Cody","nickname":"","note":"<faceForNetwork:(Cody)>\n","profile":""},
+{"id":2,"battlerName":"Actor1_5","characterIndex":4,"characterName":"Actor1","classId":2,"equips":[0,0,0,0,0],"faceIndex":4,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Thanga","nickname":"","note":"<faceForNetwork:(Thanga)>","profile":""},
+{"id":3,"battlerName":"4Felicia","characterIndex":0,"characterName":"4Felicia","classId":2,"equips":[0,0,0,0,0],"faceIndex":2,"faceName":"4Felicia","traits":[],"initialLevel":1,"maxLevel":99,"name":"Sofia","nickname":"","note":"<faceForNetwork:(Sofia)>","profile":""},
+{"id":4,"battlerName":"Mari SV","characterIndex":1,"characterName":"People1","classId":2,"equips":[0,0,0,0,0],"faceIndex":1,"faceName":"People1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Mari","nickname":"","note":"<faceForNetwork:(Mari)>","profile":""},
+{"id":5,"battlerName":"","characterIndex":0,"characterName":"","classId":1,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"","nickname":"","note":"","profile":""},
+{"id":6,"battlerName":"Nugget","characterIndex":2,"characterName":"Nature","classId":1,"equips":[0,0,0,0,0],"faceIndex":2,"faceName":"Nature","traits":[{"code":62,"dataId":0,"value":1}],"initialLevel":1,"maxLevel":99,"name":"Nugget","nickname":"","note":"","profile":""}
+]

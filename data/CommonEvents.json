@@ -1,0 +1,19 @@
+[
+null,
+{"id":1,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"Claimed","switchId":1,"trigger":0},
+{"id":2,"list":[{"code":111,"indent":0,"parameters":[0,53,0]},{"code":101,"indent":1,"parameters":["",0,0,2]},{"code":401,"indent":1,"parameters":["Nugget is already spawned!"]},{"code":0,"indent":1,"parameters":[]},{"code":411,"indent":0,"parameters":[]},{"code":121,"indent":1,"parameters":[53,53,0]},{"code":129,"indent":1,"parameters":[6,0,false]},{"code":0,"indent":1,"parameters":[]},{"code":412,"indent":0,"parameters":[]},{"code":0,"indent":0,"parameters":[]}],"name":"Summon Nugget","switchId":1,"trigger":0},
+{"id":3,"list":[{"code":111,"indent":0,"parameters":[0,53,0]},{"code":111,"indent":1,"parameters":[4,1,6,1]},{"code":311,"indent":2,"parameters":[0,1,0,0,1,false]},{"code":0,"indent":2,"parameters":[]},{"code":411,"indent":1,"parameters":[]},{"code":0,"indent":2,"parameters":[]},{"code":412,"indent":1,"parameters":[]},{"code":111,"indent":1,"parameters":[4,6,6,1]},{"code":313,"indent":2,"parameters":[0,6,1,1]},{"code":311,"indent":2,"parameters":[0,6,0,0,9999,false]},{"code":312,"indent":2,"parameters":[0,6,0,0,9999]},{"code":129,"indent":2,"parameters":[6,1,false]},{"code":121,"indent":2,"parameters":[53,53,1]},{"code":0,"indent":2,"parameters":[]},{"code":412,"indent":1,"parameters":[]},{"code":311,"indent":1,"parameters":[0,6,0,0,9999,false]},{"code":312,"indent":1,"parameters":[0,6,0,0,9999]},{"code":129,"indent":1,"parameters":[6,1,false]},{"code":121,"indent":1,"parameters":[53,53,1]},{"code":0,"indent":1,"parameters":[]},{"code":411,"indent":0,"parameters":[]},{"code":0,"indent":1,"parameters":[]},{"code":412,"indent":0,"parameters":[]},{"code":0,"indent":0,"parameters":[]}],"name":"Despawn Nugget","switchId":53,"trigger":2},
+{"id":4,"list":[{"code":250,"indent":0,"parameters":[{"name":"Book2","volume":90,"pitch":100,"pan":0}]},{"code":356,"indent":0,"parameters":["Quest Journal Open"]},{"code":0,"indent":0,"parameters":[]}],"name":"Quest Menu","switchId":1,"trigger":0},
+{"id":5,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":6,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":7,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":8,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":9,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":10,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":11,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":12,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":13,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":14,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":15,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":16,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0}
+]

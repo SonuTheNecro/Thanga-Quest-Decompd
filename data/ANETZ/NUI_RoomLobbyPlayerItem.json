@@ -1,0 +1,141 @@
+{
+    "id": "playerItemRoot",
+    "type": "group",
+    "parameters": "",
+    "constants": {
+        "notSelectedActorText": "<not selected>",
+        "readyStateText": "READY",
+        "inGameStateText": "IN GAME"
+    },
+    "bindings": {
+        "size": { "width": "460dp", "height": "90dp"},
+        "opacity": 255
+    },
+    "childrens": [
+        {
+            "id": "listItemBackground",
+            "type": "rect",
+            "parameters": "fillColor:#2A0F4E;fillAlpha:0.5;corners:0;strokeWidth:1;strokeAlpha:0.2",
+            "bindings": {
+                "size": { "width": "100%", "height": "100%"}
+            },
+            "childrens": [
+                {
+                    "id": "listItemBackgroundIfPlayerOwner",
+                    "type": "rect",
+                    "parameters": "fillColor:#1EABF7;fillAlpha:0.15;corners:0;strokeWidth:0;",
+                    "bindings": {
+                        "size": { "width": "100%", "height": "100%"},
+                        "visible": "$isMyPlayer"
+                    }
+                },
+                {
+                    "id": "playerCharacterImageSprite",
+                    "type": "image",
+                    "parameters": "folderName:Alpha;keepAspect",
+                    "bindings": {
+                        "size": { "width": "20%", "height": "100% - 2"},
+                        "position": { "x": "0", "y": "0"},
+                        "image": "$getActorFaceImage"
+                    }
+                },
+                {
+                    "id": "playerNameTextSprite",
+                    "type": "text",
+                    "parameters": "textColor:#ffffff;weight=500;outline:color=#000,width=3;alignment:left",
+                    "bindings": {
+                        "size": { "width": "60%", "height": "36dp"},
+                        "position": { "x": "prevEndX + 8dp", "y": "center - 6dp"},
+                        "fontSize": "24hdp",
+                        "text": "Player 443"
+                    }
+                },
+                {
+                    "id": "playerCharacterNameTextSprite",
+                    "type": "text",
+                    "parameters": "textColor:#D7E353;weight=500;outline:color=#000,width=2;alignment:left",
+                    "bindings": {
+                        "size": { "width": "40%", "height": "24dp"},
+                        "position": { "x": "prevX", "y": "prevEndY"},
+                        "fontSize": "16hdp",
+                        "text": ["%1", "$getActorName"],
+                        "visible": true
+                    }
+                },
+                {
+                    "id": "hostStateGroup",
+                    "type": "group",
+                    "bindings": {
+                        "position": { "x": "right - 8dp", "y": "bottom - 8dp"},
+                        "visible": "$isHost"
+                    },
+                    "childrens": [
+                        {
+                            "id": "hostStateBackgroundSprite",
+                            "type": "rect",
+                            "parameters": "fillColor:#0080c0;fillAlpha:0.6;corners:24;strokeWidth:0;",
+                            "bindings": {
+                                "size": { "width": "90dp", "height": "26dp"},
+                                "position": { "x": 0, "y": 0}
+                            },
+                            "childrens": [
+                                {
+                                    "id": "hostStateTextSprite",
+                                    "type": "text",
+                                    "parameters": "textColor:#ffffff;weight=400;outline:color=#000,width=2;alignment:center",
+                                    "bindings": {
+                                        "size": { "width": "100%", "height": "100%"},
+                                        "fontSize": "50%",
+                                        "text": "HOST"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "readyStateGroup",
+                    "type": "group",
+                    "bindings": {
+                        "position": { "x": "right - 8dp", "y": "bottom - prevHeight - 12dp"},
+                        "visible": "$isReady"
+                    },
+                    "childrens": [
+                        {
+                            "id": "readyStateBackgroundSprite",
+                            "type": "rect",
+                            "parameters": "fillColor:#2DC232;fillAlpha:0.7;corners:24;strokeWidth:0;",
+                            "bindings": {
+                                "size": { "width": "90dp", "height": "26dp"},
+                                "position": { "x": 0, "y": 0}
+                            },
+                            "childrens": [
+                                {
+                                    "id": "readyStateTextSprite",
+                                    "type": "text",
+                                    "parameters": "textColor:#ffffff;weight=300;outline:color=#000,width=2;alignment:left",
+                                    "bindings": {
+                                        "size": { "width": "80%", "height": "100%"},
+                                        "fontSize": "46%",
+                                        "text": ["%1", "$readyStateText"],
+                                        "position": { "x": "8dp", "y": "center" }
+                                    }
+                                },
+                                {
+                                    "id": "readyStateIconSprite",
+                                    "type": "image",
+                                    "parameters": "imageName:readyIcon;folderName:Alpha;keepAspect",
+                                    "bindings": {
+                                        "size": { "width": "24dp", "height": "24dp"},
+                                        "position": { "x": "right - 8dp", "y": "center" },
+                                        "visible": "~$isStartedRoom == false"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,176 @@
+{
+    "id": "listItemRoot",
+    "type": "group",
+    "parameters": "",
+    "constants": {
+        "disabledOpacity": 190
+    },
+    "bindings": {
+        "size": { "width": "460dp", "height": "120dp"},
+        "opacity": 255
+    },
+    "childrens": [
+        {
+            "id": "listItemBackground",
+            "type": "rect",
+            "parameters": "fillColor:#6737a6;fillAlpha:0.5;corners:24;strokeWidth:0;",
+            "bindings": {
+                "size": { "width": "100%", "height": "100%"}
+            },
+            "childrens": [
+                {
+                    "id": "listItemBackgroundDisabled",
+                    "type": "rect",
+                    "parameters": "fillColor:#474b56;fillAlpha:0.65;corners:24;strokeWidth:0;",
+                    "bindings": {
+                        "size": { "width": "100%", "height": "100%"},
+                        "visible": "$isDisabled"
+                    }
+                },
+                {
+                    "id": "listItemSelected",
+                    "type": "rect",
+                    "parameters": "fillColor:#ffffff;fillAlpha:0.7;strokeWidth:0;",
+                    "bindings": {
+                        "size": { "width": "6dp", "height": "64%"},
+                        "position": { "x": 0, "y": "center"},
+                        "visible": "$isActiveInList"
+                    }
+                },
+                {
+                    "id": "rpgMakerEditorVersionIconSprite",
+                    "type": "image",
+                    "parameters": "folderName:Alpha;keepAspect",
+                    "bindings": {
+                        "size": { "width": "32dp", "height": "32dp"},
+                        "position": { "x": "12dp", "y": "6dp"},
+                        "image": "$getRPGMakerVersionIcon"
+                    }
+                },
+                {
+                    "id": "rpgMakerProjectNameTextSprite",
+                    "type": "text",
+                    "parameters": "textColor:#65ab37;weight=400;outline:color=#000,width=2;alignment:left",
+                    "bindings": {
+                        "size": { "width": "60%", "height": "32dp"},
+                        "position": { "x": "prevEndX + 6dp", "y": "prevY"},
+                        "fontSize": "18hdp",
+                        "text": ["%1", "$getGameTitle"]
+                    }
+                },
+                {
+                    "id": "roomNameTextSprite",
+                    "type": "text",
+                    "parameters": "textColor:#ffffff;weight=500;outline:color=#000,width=3;alignment:left",
+                    "bindings": {
+                        "size": { "width": "70%", "height": "42dp"},
+                        "position": { "x": "20dp", "y": "prevEndY + 12dp"},
+                        "fontSize": "28hdp",
+                        "text": ["%1", "$getRoomName"]
+                    }
+                },
+                {
+                    "id": "playersCountGroup",
+                    "type": "group",
+                    "parameters": "",
+                    "bindings": {
+                        "position": { "x": "right - 8dp", "y": "10dp"}
+                    },
+                    "childrens": [
+                        {
+                            "id": "peopleCountIconSprite",
+                            "type": "image",
+                            "parameters": "imageName:networkScenePeopleIcon;folderName:Alpha;keepAspect",
+                            "bindings": {
+                                "size": { "width": "28dp", "height": "28dp"},
+                                "position": { "x": 0, "y": 0}
+                            }
+                        },
+                        {
+                            "id": "peopleCountTextSprite",
+                            "type": "text",
+                            "parameters": "textColor:#0080c0;weight=400;outline:color=#000,width=2;alignment:left",
+                            "bindings": {
+                                "size": { "width": "40dp", "height": "prevHeight"},
+                                "position": { "x": "prevEndX + 8dp", "y": 0},
+                                "fontSize": "72%",
+                                "text": ["%1/%2", "$getPlayersCount", "$getMaxPlayers"]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "gameStateGroup",
+                    "type": "group",
+                    "bindings": {
+                        "position": { "x": "right - 8dp", "y": "bottom - 8dp"}
+                    },
+                    "childrens": [
+                        {
+                            "id": "gameStateBackgroundSprite",
+                            "type": "rect",
+                            "parameters": "fillColor:#762e78;fillAlpha:0.8;corners:24;strokeWidth:0;",
+                            "bindings": {
+                                "size": { "width": "90dp", "height": "32dp"},
+                                "position": { "x": 0, "y": 0}
+                            },
+                            "childrens": [
+                                {
+                                    "id": "gameStateTextSprite",
+                                    "type": "text",
+                                    "parameters": "textColor:#ffffff;weight=400;outline:color=#000,width=2;alignment:center",
+                                    "bindings": {
+                                        "size": { "width": "100%", "height": "100%"},
+                                        "fontSize": "50%",
+                                        "text": ["%1", "$getRoomStateText"]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "gameFromSavefileGroup",
+                    "type": "group",
+                    "bindings": {
+                        "position": { "x": "right - 8dp", "y": "bottom - prevHeight - 12dp"},
+                        "visible": "$getIsLoadedGame"
+                    },
+                    "childrens": [
+                        {
+                            "id": "gameFromSavefileBackgroundSprite",
+                            "type": "rect",
+                            "parameters": "fillColor:#ff7b3c;fillAlpha:0.25;corners:24;strokeWidth:0;",
+                            "bindings": {
+                                "size": { "width": "90dp", "height": "26dp"},
+                                "position": { "x": 0, "y": 0}
+                            },
+                            "childrens": [
+                                {
+                                    "id": "gameFromSavefileTextSprite",
+                                    "type": "text",
+                                    "parameters": "textColor:#ffffff;weight=300;outline:color=#000,width=2;alignment:left",
+                                    "bindings": {
+                                        "size": { "width": "80%", "height": "100%"},
+                                        "fontSize": "50%",
+                                        "text": "From",
+                                        "position": { "x": "8dp", "y": "center" }
+                                    }
+                                },
+                                {
+                                    "id": "savefileIconSprite",
+                                    "type": "image",
+                                    "parameters": "imageName:saveIcon;folderName:Alpha;keepAspect",
+                                    "bindings": {
+                                        "size": { "width": "24dp", "height": "24dp"},
+                                        "position": { "x": "right - 8dp", "y": "center" }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

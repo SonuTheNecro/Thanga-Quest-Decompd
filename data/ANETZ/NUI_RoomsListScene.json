@@ -1,0 +1,58 @@
+{
+    "root": {
+        "id": "root",
+        "type": "screen",
+        "childrens": [
+            {
+                "type": "image",
+                "parameters": "imageName:networkSceneBackground;folderName:Alpha",
+                "bindings": {
+                    "size": { "width": "100%", "height": "100%"}
+                }
+            }
+        ]
+    },
+    "noRoomsMessage": {
+        "parent": "root",
+        "id": "noRoomsMessageText",
+        "type": "text",
+        "parameters": "textColor:#ffffff;weight=600;outline:color=#000,width=3",
+        "bindings": {
+            "position": { "x": "center", "y": "center" },
+            "size": { "width": "100%", "height": "30hdp" },
+            "text": "There are no rooms on server",
+            "fontSize": "30hdp",
+            "visible": "$isNoRooms"
+        }
+    },
+    "roomsList": {
+        "parent": "root",
+        "id": "roomsListElement",
+        "type": "list",
+        "parameters": "backgroundType:2;isHaveInOutAnimation;isHaveSelectionEffect:0",
+        "bindings": {
+            "position": { "x": "center", "y": "center" },
+            "size": { "width": "500dp", "height": "80%" }
+        }
+    },
+    "backButton" : {
+        "id": "backButton",
+        "type": "button",
+        "parent": "root",
+        "parameters": "width:60;height:40;imageName:field;folderName:Alpha;tint:#563e1d;overTint:#7a5623;activeTint:#401010",
+        "bindings": {
+            "position": { "x": "end - width - 6", "y": 4 }
+        },
+        "childrens": [
+            {
+                "type": "image",
+                "parameters": "imageName:networkSceneBackIcon;folderName:Alpha;keepAspect",
+                "bindings": {
+                    "height": "28dp",
+                    "width": "28dp",
+                    "position": { "x": "center", "y": "center" }
+                }
+            }
+        ]
+    }
+}

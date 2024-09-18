@@ -1,0 +1,210 @@
+{
+    "root": {
+        "id": "root",
+        "type": "screen",
+        "childrens": [
+            {
+                "type": "image",
+                "parameters": "imageName:networkSceneBackground;folderName:Alpha",
+                "bindings": {
+                    "size": { "width": "100%", "height": "100%"}
+                }
+            }
+        ]
+    },
+    "header": {
+        "id": "headerGroup",
+        "type": "group",
+        "parent": "root",
+        "bindings": {
+            "width": "100%",
+            "height": 50,
+            "position": { "x": 0, "y": 50 }
+        },
+        "childrens": [
+            {
+                "type": "rect",
+                "parameters": "strokeWidth:0;fillGradient:0=#33182f,1=#4f2549;",
+                "effects": ["shadow;rotation:90"],
+                "bindings": {
+                    "width": "100%",
+                    "height": "100%",
+                    "opacity": 140,
+                    "gradientEnd": { "x": 0, "y": "height" }
+                }
+            },
+            {
+                "id": "roomNameText",
+                "type": "text",
+                "parameters": "alignment:left;textColor:#ffffff;font:size=26,weight=600;outline:color=#000,width=3",
+                "bindings": {
+                    "size": { "width": "70%", "height": "100%"},
+                    "position": { "x": 20, "y": 0 },
+                    "text": ["Room: %1", "$getRoomName"]
+                }
+            },
+            {
+                "type": "rect",
+                "id": "hostedInfoRect",
+                "parameters": "width:120;height:30;fillColor:#0080c0;fillAlpha:0.4;strokeWidth:0;strokeColor:#ffffff;corners:24",
+                "bindings": {
+                    "position": { "x": "end - width - 10", "y": "center" },
+                    "visible": "$isRoomHosted"
+                },
+                "childrens": [
+                    {
+                        "id": "hostedInfoText",
+                        "type": "text",
+                        "parameters": "alignment:center;textColor:#ccc;font:size=16,weight=300;outline:color=#000,width=2",
+                        "bindings": {
+                            "size": { "width": "100%", "height": "100%"},
+                            "position": { "x": 0, "y": 0 },
+                            "text": ["%1", "Hosted"]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "menu": {
+        "id": "menuGroup",
+        "type": "group",
+        "parameters": "keyboardHandling;horizontalNavigation",
+        "parent": "root",
+        "bindings": {
+            "width": "auto",
+            "height": 50,
+            "position": { "x": "center", "y": "prevEndY + 20dp" },
+            "visible": "$isMenuVisible"
+        },
+        "childrens":[
+            {
+                "id": "startGameButton",
+                "createIf": "$isNeedStartGameButton",
+                "type": "button",
+                "parameters": "width:160;height:48;imageName:networkSceneButton;folderName:Alpha;tint:#210c1e;overTint:#42073a;activeTint:#2e102a",
+                "bindings": {
+                    "position": { "x": 0, "y": 0 },
+                    "enable": "$isStartButtonIsEnabled"
+                },
+                "childrens": [
+                    {
+                        "type": "text",
+                        "parameters": "outline:width=4,color=#4040db;",
+                        "bindings": {
+                            "size": { "width": "100%", "height": "100%" },
+                            "fontSize": "50%",
+                            "text": ["%1", "Start"]
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "readyButton",
+                "createIf": "$isNeedReadyButton",
+                "type": "button",
+                "parameters": "width:160;height:48;imageName:networkSceneButton;folderName:Alpha;tint:#210c1e;overTint:#42073a;activeTint:#2e102a",
+                "bindings": {
+                    "position": { "x": "prevEndX + 6", "y": 0 },
+                    "enable": "$isReadyButtonIsEnabled"
+                },
+                "childrens": [
+                    {
+                        "type": "text",
+                        "parameters": "outline:width=4,color=#4040db;",
+                        "bindings": {
+                            "size": { "width": "100%", "height": "100%" },
+                            "fontSize": "50%",
+                            "text": ["%1", "Ready"]
+                        }
+                    }
+                ]
+            }
+            ,
+            {
+                "id": "joinInGameButton",
+                "createIf": "$isNeedJoinButton",
+                "type": "button",
+                "parameters": "width:160;height:48;imageName:networkSceneButton;folderName:Alpha;tint:#210c1e;overTint:#42073a;activeTint:#2e102a",
+                "bindings": {
+                    "position": { "x": "prevEndX + 6", "y": 0 },
+                    "enable": "$isJoinButtonIsEnabled"
+                },
+                "childrens": [
+                    {
+                        "type": "text",
+                        "parameters": "outline:width=4,color=#4040db;",
+                        "bindings": {
+                            "size": { "width": "100%", "height": "100%" },
+                            "fontSize": "50%",
+                            "text": ["%1", "Join"]
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "characterSelectButton",
+                "createIf": "$isNeedCharacterSelectButton",
+                "type": "button",
+                "parameters": "width:160;height:48;imageName:networkSceneButton;folderName:Alpha;tint:#210c1e;overTint:#42073a;activeTint:#2e102a",
+                "bindings": {
+                    "position": { "x": "prevEndX + 6", "y": 0 },
+                    "enable": "$isCharSelectButtonIsEnabled"
+                },
+                "childrens": [
+                    {
+                        "type": "text",
+                        "parameters": "outline:width=4,color=#4040db;",
+                        "bindings": {
+                            "size": { "width": "100%", "height": "100%" },
+                            "fontSize": "50%",
+                            "text": ["%1", "Character"]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "playersList": {
+        "parent": "root",
+        "id": "playersListElement",
+        "type": "list",
+        "animations": ["field:opacity;duration:0.5;keyframes:0=0,100=255"],
+        "parameters": "backgroundType:2;isHaveInOutAnimation;isHaveSelectionEffect:0",
+        "bindings": {
+            "position": { "x": "center", "y": "prevEndY + 16dp" },
+            "size": { "width": "490dp", "height": "400dp" }
+        }
+    },
+    "actorsList": {
+        "parent": "root",
+        "id": "actorsListElement",
+        "type": "list",
+        "animations": [],
+        "parameters": "backgroundType:2;maxCols:2;isHaveInOutAnimation;isHaveSelectionEffect:0",
+        "bindings": {
+            "position": { "x": "center", "y": "prevY" },
+            "size": { "width": "660dp", "height": "380dp" }
+        }
+    },
+    "exitButton" : {
+        "id": "exitButton",
+        "type": "button",
+        "parent": "root",
+        "parameters": "width:60;height:40;imageName:field;folderName:Alpha;tint:#690909;overTint:#a30d0d;activeTint:#401010",
+        "bindings": {
+            "position": { "x": "end - width - 6", "y": 4 }
+        },
+        "childrens": [
+            {
+                "type": "image",
+                "parameters": "imageName:networkSceneExitIcon;folderName:Alpha;keepAspect",
+                "bindings": {
+                    "height": "50%",
+                    "width": "45%",
+                    "position": { "x": "center", "y": "center" }
+                }
+            }
+        ]
+    }
+}
